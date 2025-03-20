@@ -84,9 +84,9 @@ class CommentGeneratorApp(QWidget):
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are an assistant that adds concise, DevOps-style comments to Python code."},
-                {"role": "user", "content": f"Please add brief, functional comments to the following Python code."
+                {"role": "user", "content": f"Please add brief, functional comments inside the given python code."
                                             f"Do NOT include Markdown formatting (no triple backticks). Do not change the code itself in ANY WAY, only add small, necessary, and important comments for a reviewer to understand it."
-                                            f"Do not change the code, do not change existing comments. ONLY ADD THEM WHERE NECESSARY.:\n\n{original_code}"}
+                                            f"Do not change the code, do not change existing comments. ONLY ADD THEM ABOVE CLASSES OR FUNCTIONS, keep rest of the code as it is.:\n\n{original_code}"}
             ],
             max_tokens=1500,
             temperature=0.3
